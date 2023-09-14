@@ -1,10 +1,13 @@
 .details-wrapper {
-  max-width: 900px;
-  margin: 20px auto;
-  position: relative;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
 }
 
 .details {
+  margin-bottom: 100px;
   ::ng-deep mwl-gauge {
     width: 150px;
     height: 150px;
@@ -43,11 +46,10 @@
 
 .game {
   &-banner {
-    height: 442px;
     overflow: hidden;
-
     &-img {
       width: 100%;
+      height: 100vh;
       filter: blur(1px);
     }
   }
@@ -55,7 +57,6 @@
   &-content {
     text-align: center;
     position: relative;
-    top: -200px;
   }
 
   &-header {
@@ -67,16 +68,32 @@
       color: #fff;
       font-weight: 700;
       line-height: 70px;
+      @media screen and (max-width: 490px) {
+        font-size: 60px;
+        line-height: 70px;
+      }
+      @media screen and (min-width: 1500px) {
+        font-size: 110px;
+        line-height: 90px;
+      }
     }
 
     &-release-date {
       color: #fff;
       font-weight: 700;
+      @media screen and (min-width: 1500px) {
+        font-size: 50px;
+        line-height: 90px;
+      }
     }
 
     &-genres {
       color: #fff;
       font-weight: 700;
+      @media screen and (min-width: 1500px) {
+        font-size: 50px;
+        line-height: 90px;
+      }
     }
   }
 }
@@ -87,4 +104,8 @@
 
 .two {
   margin: auto;
+}
+
+.game-content-container {
+  position: relative;
 }
